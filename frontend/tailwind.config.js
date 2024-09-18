@@ -1,15 +1,13 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    './index.html',               // If you have an index.html file
+    './src/**/*.{vue,js,ts,jsx,tsx}',  // This will scan all .vue, .js, .ts, .jsx, and .tsx files in the src directory
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
-  purge: ['./src/**/*.{vue,js,ts,jsx,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
-  variants: {
-    extend: {},
-  },
 };
-  
+
+
 
