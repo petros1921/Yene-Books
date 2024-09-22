@@ -17,43 +17,39 @@
   </div>
 </template>
   
-<script>
-import axios from 'axios';
 
+<script>
 export default {
-  name: "SignIn",
-  mounted() {
-    document.title = 'SignIn'; // Change the title here
-    },
+  name: 'SignIn',
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      // Mock user credentials for testing
+      mockUser: {
+        email: 'user@example.com',
+        password: 'yourpassword',
+        token: 'mock-jwt-token',
+      },
     };
   },
   methods: {
-    async handleSignIn() {
-      try {
-        // Make POST request to the backend API
-        await axios.post('http://localhost:5000/auth/signin', {
-          email: this.email,
-          password: this.password
-        });
-
-        // Handle success
-        this.successMessage = "Sign in successful!";
-        this.errorMessage = '';
-
-        // Optionally, store the JWT token from response and redirect to another page
-        // localStorage.setItem('token', response.data.token);
-        // this.$router.push('/dashboard'); // Redirect to another route after success
-      } catch (error) {
-        // Handle error
-        this.errorMessage = error.response.data.message || 'Sign in failed';
-        this.successMessage = '';
+    handleSignIn() {
+      // Check if the input email and password match the mock user credentials
+      if (this.email === this.mockUser.email && this.password === this.mockUser.password) {
+        // Store the mock token in localStorage
+        localStorage.setItem('token', this.mockUser.token);
+        // Redirect to the dashboard
+        this.$router.push('/dashboard');
+      } else {
+        // Display error message for incorrect credentials
+        alert('Invalid credentials. Please try again.');
       }
-    }
-  }
+    },
+  },
 };
 </script>
-  
+
+<style scoped>
+/* Add any necessary styles */
+</style>
