@@ -19,6 +19,8 @@
   
 
 <script>
+// import { loginUser } from '../services/api';
+
 export default {
   name: 'SignIn',
   data() {
@@ -31,11 +33,11 @@ export default {
         password: 'yourpassword',
         token: 'mock-jwt-token',
       },
+      error: null
     };
   },
   methods: {
-    handleSignIn() {
-      // Check if the input email and password match the mock user credentials
+    async handleSignIn() {
       if (this.email === this.mockUser.email && this.password === this.mockUser.password) {
         // Store the mock token in localStorage
         localStorage.setItem('token', this.mockUser.token);
