@@ -57,6 +57,7 @@ Express.js: Minimal and flexible Node.js web application framework.
 MongoDB: NoSQL database for efficient data storage.
 Mongoose: MongoDB object modeling for Node.js.
 JWT (JSON Web Tokens): For user authentication and secure API access.
+
 Other Tools:
 Multer: For handling file uploads (e.g., user profile images).
 Cloudinary: Cloud-based image hosting service.
