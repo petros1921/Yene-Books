@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
-const bookRoutes = require('./routes/bookRoutes'); // Ensure this is correct
+const bookRoutes = require('./routes/bookRoutes'); 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // Database connection
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/yeneBooks'; // Default to local MongoDB if not found in env
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/yeneBooks'; 
 
 mongoose.connect(mongoURI)
 .then(() => console.log('MongoDB connected'))
